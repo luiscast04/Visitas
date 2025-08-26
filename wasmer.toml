@@ -1,0 +1,19 @@
+[package]
+name = "contador-visitas"
+version = "0.1.0"
+description = "Contador de visitas PHP"
+
+[fs]
+"/" = "."
+
+[build-config]
+builder = "php"
+build-command = ""
+
+[[command]]
+name = "script"
+module = "sharrattj/bash:4.4.19"
+runner = "wasi"
+
+[command.annotations.wasi]
+main-args = ["php", "-S", "0.0.0.0:8000", "-t", "."]
